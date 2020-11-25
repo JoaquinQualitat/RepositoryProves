@@ -1,0 +1,25 @@
+﻿' Libreria:		PortalRobust.qfl
+' Objectiu:	Conté funcions reutilitzables per a Portal, optimitzades
+Option Explicit
+'Funció per accedir a portal
+Public Sub OpenPortalMapaWeb()
+	'Ubicació més fitxer que fem servir per marcar l'entorn al que accedim (PRU o PRE)
+	'Dim XML_ENVIRONMENT : XML_ENVIRONMENT = "C:\QTP_FILES\variableEnvironment.xml"
+	'Obrim el fitxer d'entorn	
+	'Environment.LoadFromFile (XML_ENVIRONMENT)
+	'Tanquem tots els processos de l'explorer, per evitar que un que estigui bloquejat
+	'provoqui fail
+	SystemUtil.CloseProcessByName("iexplore.exe")
+	'Tanquem les finestres de resultats d'execució, per evitar que s'acumulin
+	'SystemUtil.CloseProcessByName("reportviewer.exe")
+	'Accedim a mapa web segons el que s'hagi marcat en el fitxer d'entorn	
+	Dim EntornoPrueba
+	EntornoPrueba = "PRU"
+	'Select Case Environment ("Entorn")
+	Select Case EntornoPrueba
+		Case "PRE"
+			SystemUtil.Run "iexplore.exe", "https://preproduccio.seu.atc.intranet.gencat.cat/MapaWeb.aspx"
+		Case "PRU"
+			SystemUtil.Run "iexplore.exe", "https://integracio.seu.atc.intranet.gencat.cat/MapaWeb.aspx"
+	End Select
+End Sub

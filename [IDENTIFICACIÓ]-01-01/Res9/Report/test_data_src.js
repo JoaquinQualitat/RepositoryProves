@@ -1,0 +1,1 @@
+﻿var __testDataSource={items:[{dataFilePath:'Default.xls',dataFileFormat:'excel',dataFileFolder:'E:\\Repository Git\\ProvesRegressió\\Portal\\[IDENTIFICACIÓ]\\[IDENTIFICACIÓ]-01-01\\Res9',namePairs:[]}]};
